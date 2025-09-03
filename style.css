@@ -1,0 +1,158 @@
+/* ===== Basic reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== Body background ===== */
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 15px 50px;
+  margin-bottom: 15px;
+  min-height: 100vh; /* full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Main calculator box ===== */
+.calculator-container {
+  background: #2c3e50;
+  border-radius: 30px;
+  padding: 25px 30px;
+  width: 400px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #eee;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* ===== Header ===== */
+.calculator-header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.calculator-header h1 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #eee;
+  letter-spacing: 1px;
+}
+
+/* ===== Display section ===== */
+.display-container {
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #222;
+  overflow-x: hidden;
+}
+.operation-display {
+  font-size: 1.1rem;
+  color: #000000;
+  text-align: right;
+  min-height: 20px;
+}
+.result-display {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #111;
+  text-align: right;
+  min-height: 40px;
+  margin-top: 5px;
+}
+
+/* ===== Last 3 results bar ===== */
+.multi-output-container {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 1rem;
+  height: 50px;
+  box-shadow: inset 0 0 5px #000000;
+}
+.multi-output-part {
+  color: #000000;
+  flex: 1;
+  text-align: center;
+  border-left: 1px solid #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.multi-output-part:first-child {
+  border-left: none;
+}
+
+/* ===== Buttons grid ===== */
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 10px;
+}
+.btn-calculator {
+  border: none;
+  border-radius: 15px;
+  padding: 15px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #eee;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+/* ===== Button states ===== */
+.btn-calculator:hover {
+  background-color: #444;
+  color: #fff;
+}
+.btn-calculator:active {
+  background-color: #555;
+  color: #fff;
+}
+
+/* ===== Different buttons ===== */
+.btn-number { background: #333; }
+.btn-operator { background: #4a6cf7; color: #fff; }
+.btn-equals { background: #27ae60; color: #fff; }
+.btn-clear { background: #e74c3c; color: #fff; }
+.btn-delete { background: #f39c12; color: #fff; }
+
+/* ===== Mobile view ===== */
+@media (max-width: 480px) {
+  .calculator-container {
+    width: 100%;
+    padding: 20px;
+  }
+  .buttons-grid { gap: 10px; }
+  .btn-calculator {
+    padding: 12px 0;
+    font-size: 1rem;
+  }
+  .result-display { font-size: 2rem; }
+  .multi-output-container {
+    height: 40px;
+    font-size: 0.9rem;
+  }
+}
